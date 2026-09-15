@@ -1,4 +1,6 @@
+import json
 from pathlib import Path
+
 import streamlit as st
 
 from env_loader import load_lab_env
@@ -6,6 +8,23 @@ from providers import make_provider
 from tools import load_tool_declarations, to_openai_tools
 from chat import run_model_tool_loop
 from versioning import build_artifact_version
+
+
+def chat_reply(value: str) -> str:
+    """Show only the human-readable field from the agent JSON response."""
+    value = value.strip()
+    if value.startswith("```"):
+        lines = value.splitlines()
+        if len(lines) >= 3 and lines[-1].strip().startswith("```"):
+            value = "\n".join(lines[1:-1]).strip()
+    try:
+        parsed = json.loads(value)
+        if isinstance(parsed, dict) and isinstance(parsed.get("reply"), str):
+            return parsed["reply"]
+    except json.JSONDecodeError:
+        pass
+    return value
+
 
 ROOT = Path(__file__).parent
 load_lab_env(ROOT)
@@ -28,6 +47,11 @@ st.caption(f"Artifact Version Active: `{artifact_ver.artifact_version}`")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Convert responses saved before the JSON display fix as well.
+for message in st.session_state.messages:
+    if message["role"] == "assistant":
+        message["content"] = chat_reply(message["content"])
+
 # Hiển thị lịch sử chat
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
@@ -42,7 +66,7 @@ if prompt := st.chat_input("Nhập yêu cầu hỗ trợ IT..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    provider = make_provider("openrouter")  # Hoặc provider nhóm sử dụng
+    provider = make_provider("gemini")
     chat_history = [{"role": "system", "content": system_prompt}]
     for m in st.session_state.messages:
         chat_history.append({"role": m["role"], "content": m["content"]})
@@ -56,7 +80,8 @@ if prompt := st.chat_input("Nhập yêu cầu hỗ trợ IT..."):
                 model=None,
                 max_tool_rounds=4,
             )
-            reply = result["assistant_text"]
+            raw_reply = result["assistant_text"]
+            reply = chat_reply(raw_reply)
             tool_events = result.get("tool_events", [])
             st.markdown(reply)
             if tool_events:
