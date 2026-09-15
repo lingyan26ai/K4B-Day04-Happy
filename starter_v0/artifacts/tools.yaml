@@ -91,12 +91,12 @@ tools:
       type: object
       properties:
         query: {type: string, default: "", description: "Nội dung cần tìm"}
-        policy_area: {type: string, enum: [all, access_control, data_privacy, external_tools, incident_response, service_operations, ticketing], default: "all", description: "Nhóm chính sách"}
+        policy_area: {type: string, enum: [all, access_control, data_privacy, external_tools, incident_response, service_operations, ticketing], default: "all", description: "Nhóm chính sách. Chọn 'access_control' cho tài khoản, mở khóa, MFA; 'data_privacy' cho bảo mật thông tin, secret, transcript; 'incident_response' cho mức ưu tiên sự cố; 'service_operations' cho thay đổi cấu hình dịch vụ; 'ticketing' cho quy định tạo ticket."}
         top_k: {type: integer, default: 3, description: "Số mục"}
       required: [query]
 
   - name: create_ticket
-    description: "Tạo một ticket hỗ trợ. CHỈ ĐƯỢC GỌI TOOL NÀY khi người dùng đã xác nhận đồng ý (Yes) ở câu thoại ngay trước đó. Nếu người dùng chưa xác nhận hoặc mới đổi thông tin ticket, PHẢI gọi tool clarify với response_type='yes_no' trước."
+    description: "Tạo một ticket hỗ trợ. CHỈ ĐƯỢC GỌI TOOL NÀY khi người dùng đã xác nhận đồng ý sau khi được hỏi, HOẶC khi người dùng chủ động đưa ra lời xác nhận rõ ràng với đầy đủ thông tin (VD: 'Tôi xác nhận tạo ticket...'). Nếu chưa có xác nhận rõ ràng hoặc mới đổi thông tin, PHẢI gọi tool clarify với response_type='yes_no' trước."
     parameters:
       type: object
       properties:
