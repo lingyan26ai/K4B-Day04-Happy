@@ -7,10 +7,10 @@
 
 ## Team
 
-- Team:
+- Team: Happy
 - Thành viên và INDIVIDUAL: [TEAM.md](../../TEAM.md)
-- Members:
-- Provider/model:
+- Members: Đinh Đức Long
+- Provider/model: Openrouter
 
 # PHẦN A — Giới thiệu agent
 
