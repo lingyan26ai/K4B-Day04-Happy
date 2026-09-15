@@ -96,7 +96,7 @@ tools:
       required: [query]
 
   - name: create_ticket
-    description: "Tạo một ticket hỗ trợ. CHỈ ĐƯỢC GỌI TOOL NÀY khi người dùng đã xác nhận đồng ý sau khi được hỏi, HOẶC khi người dùng chủ động đưa ra lời xác nhận rõ ràng với đầy đủ thông tin (VD: 'Tôi xác nhận tạo ticket...'). Nếu chưa có xác nhận rõ ràng hoặc mới đổi thông tin, PHẢI gọi tool clarify với response_type='yes_no' trước."
+    description: "Tạo một ticket hỗ trợ. CHỈ ĐƯỢC GỌI TOOL NÀY khi người dùng đã xác nhận đồng ý sau khi được hỏi, HOẶC khi cùng một tin nhắn người dùng chủ động xác nhận tạo ticket với đầy đủ tóm tắt, mức ưu tiên và mã tài sản nếu có. Khi lời xác nhận chủ động đã đầy đủ, gọi trực tiếp với confirmed=true và không hỏi lại bằng clarify. Nếu chưa có xác nhận rõ ràng hoặc mới đổi thông tin, PHẢI gọi tool clarify với response_type='yes_no' trước."
     parameters:
       type: object
       properties:
