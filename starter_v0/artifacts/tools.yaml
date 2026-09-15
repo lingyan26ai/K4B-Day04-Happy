@@ -8,7 +8,7 @@
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: "Gửi một câu hỏi làm rõ hoặc câu hỏi xin xác nhận tới người dùng. Dùng response_type='yes_no' khi cần xác nhận trước khi tạo ticket hoặc khi thông tin ticket thay đổi. Dùng response_type='text' khi thiếu asset_id hoặc employee_id. Dùng response_type='choice' khi môi trường không rõ ràng."
     parameters:
       type: object
       properties:
@@ -18,7 +18,7 @@ tools:
       required: [question]
 
   - name: search_kb
-    description: "Tìm hướng dẫn hỗ trợ kỹ thuật."
+    description: "Tìm hướng dẫn hỗ trợ kỹ thuật. BẮT BUỘC trích xuất category phù hợp với chủ đề câu hỏi (email, wifi, vpn, printing, account, security, hardware, software, meeting_room). Không dùng 'all' khi chủ đề đã rõ ràng."
     parameters:
       type: object
       properties:
@@ -96,7 +96,7 @@ tools:
       required: [query]
 
   - name: create_ticket
-    description: "Tạo một ticket hỗ trợ."
+    description: "Tạo một ticket hỗ trợ. CHỈ ĐƯỢC GỌI TOOL NÀY khi người dùng đã xác nhận đồng ý (Yes) ở câu thoại ngay trước đó. Nếu người dùng chưa xác nhận hoặc mới đổi thông tin ticket, PHẢI gọi tool clarify với response_type='yes_no' trước."
     parameters:
       type: object
       properties:
