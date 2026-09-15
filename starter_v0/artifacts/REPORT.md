@@ -1,6 +1,6 @@
 # Day 04 Lab v3 Report — Trợ lý AI của nhóm
 
-- Lĩnh vực tự chọn:
+- Lĩnh vực tự chọn: IT Helpdesk
 - Nhiệm vụ và luồng cơ bản đã chốt trước v0:
 - Đường dẫn bộ 30 câu cơ bản và 12 câu an toàn; commit chốt bộ trước v0:
 - Chức năng mở rộng ngoài luồng cơ bản (nếu có; tối đa 10 trong tổng 100 điểm):
@@ -9,8 +9,8 @@
 
 - Team: Happy
 - Thành viên và INDIVIDUAL: [TEAM.md](../../TEAM.md)
-- Members: Đinh Đức Long
-- Provider/model: Openrouter
+- Members: Võ Công Danh, Bùi Việt Anh, Hà Anh Tuấn, Đinh Đức Long
+- Provider/model:Openrouter/GPT-4o-mini
 
 # PHẦN A — Giới thiệu agent
 
@@ -20,7 +20,7 @@
 
 **Link dùng thử:**
 
-> URL:
+> URL: 
 
 ## A2. Tool agent có
 
