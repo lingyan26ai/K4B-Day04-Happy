@@ -10,7 +10,7 @@
 - Team: Happy
 - Thành viên và INDIVIDUAL: [TEAM.md](../../TEAM.md)
 - Members: Võ Công Danh, Bùi Việt Anh, Hà Anh Tuấn, Đinh Đức Long
-- Provider/model:Openrouter/GPT-4o-mini
+- Provider/model:Openrouter
 
 # PHẦN A — Giới thiệu agent
 
