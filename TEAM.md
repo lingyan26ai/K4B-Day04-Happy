@@ -36,7 +36,7 @@ Sao chép mục này cho từng thành viên.
 - Quyết định, khó khăn và cách xử lý: Bổ sung quy tắc hỏi lại khi thiếu hoặc mơ hồ ID/environment; kiểm tra từng trace để phân biệt lỗi tool, argument và provider.
 - Điều đã học: Cách thiết kế prompt tool calling, kiểm soát confirmation và dùng run evidence để đánh giá agent.
 - AI/công cụ đã dùng và cách kiểm tra: Dùng Codex, Git/GitHub và OpenRouter. Kiểm tra qua run JSON, metric, hash artifact và git diff.
-- Thời điểm đã tự nộp URL repo chung trên VLearn:
+- Thời điểm đã tự nộp URL repo chung trên VLearn: 11:31:36 16/9/2026
 
 ### Bùi Việt Anh — 2A202602611
 
