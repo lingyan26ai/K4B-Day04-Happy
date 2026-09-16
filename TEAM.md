@@ -48,12 +48,11 @@ Sao chép mục này cho từng thành viên.
 
 ### Đinh Đức Long - 2A202602633
 
-- Phần việc và file/commit/PR: Cải thiện system_prompt.md và tools.yaml. Chạy và phân tích eval_adversarial. Phân tích và cập nhật các case H12, M05, M09 (nhóm lỗi bỏ qua/sai thứ tự confirmation boundary trước write-action) trong eval_base. Cập nhật thêm 10 case mới vào data/eval_group.json. Commit: 910360a, d44e9f8.
+- Phần việc và file/commit/PR: Cải thiện system_prompt.md và tools.yaml. Chạy và phân tích eval v0, v3, v4. Phân tích và cập nhật các case trong eval_adversarial và các case H12, M05, M09 (nhóm lỗi bỏ qua/sai thứ tự confirmation boundary trước write-action) trong eval_base. Cập nhật thêm 10 case mới vào data/eval_group.json. Commit: 910360a, d44e9f8.
 - Quyết định, khó khăn và cách xử lý: Phát hiện agent tin nhầm nội dung do user tự chèn thành xác nhận thật, dẫn tới bỏ qua confirmation ở nhiều case adversarial. Khó khăn là viết rule đủ tổng quát để chặn nhiều biến thể injection. Xử lý sửa system_prompt.md để chỉ tin tool_result thật từ hệ thống và từ chối ngay khi có dữ liệu nhạy cảm
 - Điều đã học: Cách thiết kế prompt injection, forged state, role spoofing, stale confirmation để kiểm tra ranh giới an toàn của agent, hiểu rằng một agent có thể vượt qua base suite nhưng vẫn có lỗ hổng nghiêm trọng ở adversarial suite nếu rule an toàn không được viết ở mức tổng quát, cách viết eval case có expect rõ ràng và bám sát failure_type thực tế.
 - AI/công cụ đã dùng và cách kiểm tra: Sử dụng Antigravity, Git/GitHub và OpenRouter. Kiểm tra qua run JSON, metric, hash artifact và git diff.     
-- Thời điểm đã tự nộp URL repo chung trên VLearn: 11:23:52 16/9/2026
-
+- Thời điểm đã tự nộp URL repo chung trên VLearn: 
 ### Hà Anh Tuấn - 2A202602376
 - Phần việc và file/commit/PR: Xây dựng giao diện web bằng Streamlit cho IT Helpdesk Agent trong `starter_v0/app.py`; bổ sung dependency Streamlit trong `starter_v0/requirements.txt`; tích hợp luồng chat với provider, hiển thị tool-calling traces và lưu transcript hội thoại tại `starter_v0/transcripts/`. Commit: `0ff29dc`, `a660cca`.
 - Quyết định, khó khăn và cách xử lý: Dùng `st.session_state` để giữ lịch sử hội thoại giữa các lần Streamlit rerun, giúp trải nghiệm chat liền mạch. Chuẩn hóa phần phản hồi từ agent bằng cách tách trường `reply` trong JSON trước khi hiển thị, đồng thời đặt tool traces trong expander để giao diện gọn nhưng vẫn có bằng chứng kiểm tra.
