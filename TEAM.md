@@ -37,3 +37,11 @@ Sao chép mục này cho từng thành viên.
 - Điều đã học: Cách thiết kế prompt tool calling, kiểm soát confirmation và dùng run evidence để đánh giá agent.
 - AI/công cụ đã dùng và cách kiểm tra: Dùng Codex, Git/GitHub và OpenRouter. Kiểm tra qua run JSON, metric, hash artifact và git diff.
 - Thời điểm đã tự nộp URL repo chung trên VLearn:
+
+### Bùi Việt Anh — 2A202602611
+
+- Phần việc và file/commit/PR: Cải thiện system_prompt.md, sửa tools trong tool.yaml, chạy và phân tích eval v0, v4, v5, cập nhật version_log.csv. Commit: 0d9e569a95da87003ff9965762f6e17e4bfdc9bb, 2d58a196be180013df61a9aafb1a80920737d4f2, fce38999adaaadf5f1b5676e4ef0f73ac7bb9808, ecbc29c98b2f86b0629c8d02403de128b1f0cf85.
+- Quyết định, khó khăn và cách xử lý: Xem log, phân tích các test case lỗi, xác định loại lỗi, kiểm tra tool được gọi và system prompt, chuẩn đoán nguyên nhân; Nới lỏng system prompt khỏi bị quá cứng nhắc/hardcode, thêm mô tả chi tiết cho tool; Không phải chuẩn đoán nào cũng chính xác, giải pháp sau làm hỏng giải pháp trước, sau mỗi giải pháp phải chạy lại 1 lần tất cả test case; Thử lại nhiều lần.
+- Điều đã học: Trace log, chuẩn đoán nguyên nhân gây lỗi nếu agent sử dụng tool sai cách (sai tool, sai tham số,...), quyết định khi nào sửa tool/system_prompt, phối hợp làm việc nhóm.
+- AI/công cụ đã dùng và cách kiểm tra: Anti-gravity, Git/GitHub, OpenRouter. Trích xuất test_case failed của run, học cách nhận biết trường hợp nào sửa tool/system_prompt, học cách viết description chặt chẽ cho tool, viết log từ json vào csv.
+- Thời điểm đã tự nộp URL repo chung trên VLearn:
