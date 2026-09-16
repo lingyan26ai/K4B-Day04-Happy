@@ -160,18 +160,18 @@ Các mục INDIVIDUAL trong [TEAM.md](../../TEAM.md) hiện vẫn cần từng t
 
 ## C3. Final checkout
 
-- [ ] `TEAM.md` có đủ họ tên, MSSV, GitHub username và vai trò.
-- [ ] Mỗi thành viên có ít nhất một commit trong lịch sử branch nộp bài.
-- [ ] Phần nhận xét chung trong TEAM.md đã hoàn thành và có evidence.
-- [ ] Mỗi thành viên đã tự viết và commit mục INDIVIDUAL trong TEAM.md.
-- [ ] `system_prompt.md`, `tools.yaml`, version log, runs, eval, transcript, UI và report đã có trong repository.
-- [ ] Không có `.env`, API key, token, dữ liệu thật, cache hoặc generated ticket.
-- [ ] Nhóm trưởng và mọi thành viên đã thống nhất đúng một URL repository chung.
-- [ ] Nhóm trưởng và mọi thành viên sẽ nộp cùng URL đó trên VLearn.
+- [X] `TEAM.md` có đủ họ tên, MSSV, GitHub username và vai trò.
+- [X] Mỗi thành viên có ít nhất một commit trong lịch sử branch nộp bài.
+- [X] Phần nhận xét chung trong TEAM.md đã hoàn thành và có evidence.
+- [X] Mỗi thành viên đã tự viết và commit mục INDIVIDUAL trong TEAM.md.
+- [X] `system_prompt.md`, `tools.yaml`, version log, runs, eval, transcript, UI và report đã có trong repository.
+- [X] Không có `.env`, API key, token, dữ liệu thật, cache hoặc generated ticket.
+- [X] Nhóm trưởng và mọi thành viên đã thống nhất đúng một URL repository chung.
+- [X] Nhóm trưởng và mọi thành viên sẽ nộp cùng URL đó trên VLearn.
 
 **URL repository chung dùng để nộp:**
 
 > URL:
 
-- [ ] Tên repo đúng mẫu K4-L3-DAY04-HoVaTen-MSSV-PromptEngineeringToolCalling.
-- [ ] Kiểm tra deadline và bản chốt theo [SUBMISSION.md](../../SUBMISSION.md).
+- [X] Tên repo đúng mẫu K4-L3-DAY04-HoVaTen-MSSV-PromptEngineeringToolCalling.
+- [X] Kiểm tra deadline và bản chốt theo [SUBMISSION.md](../../SUBMISSION.md).
