@@ -15,8 +15,8 @@
 | Họ và tên | MSSV | GitHub | Vai trò và công việc | File/commit/PR |
 |---|---|---|---|---|
 | Võ Công Danh | 2A202602739 | lingyan26ai | Cải thiện prompt xử lý ID/environment, chạy eval và quản lý evidence/version log, cập nhật report | system_prompt.md, tools.yaml, version_log.csv, v5 runs; ed6dda7, a0537b9, 90e8fdf, 1145fa1, 8eb08ea |
-| Bùi Việt Anh | 2A202602611 | VietAnh-AI2-UET | Sửa lỗi tool routing, chạy tích hợp các bộ eval và cập nhật extension artifacts | system_prompt.md, tools.yaml, runs/; 0d9e569, 2d58a19, fce3899 |
-| Đinh Đức Long | 2A202602633 | may31st | Xử lý prompt injection và safety boundary, chạy lại adversarial eval | system_prompt.md, adversarial runs; d44e9f8, 910360a |
+| Bùi Việt Anh | 2A202602611 | VietAnh-AI2-UET | Sửa lỗi tool routing, chạy tích hợp các bộ eval và cập nhật extension artifacts | system_prompt.md, tools.yaml, runs/; 0d9e569, 2d58a19, fce3899, ecbc29c |
+| Đinh Đức Long | 2A202602633 | may31st | Xử lý prompt injection và safety boundary, chạy lại adversarial eval | system_prompt.md, tools.yaml, adversarial runs; d44e9f8, 910360a |
 | Hà Anh Tuấn | 2A202602376 | SpoopyTuan | Phát triển UI Streamlit và lưu transcript hội thoại | tarter_v0/app.py, starter_v0/transcripts/; 0ff29dc, a660cca |
 
 ## Nhận xét chung
@@ -40,8 +40,16 @@ Sao chép mục này cho từng thành viên.
 
 ### Bùi Việt Anh — 2A202602611
 
-- Phần việc và file/commit/PR: Cải thiện system_prompt.md, sửa tools trong tool.yaml, chạy và phân tích eval v0, v4, v5, cập nhật version_log.csv. Commit: 0d9e569a95da87003ff9965762f6e17e4bfdc9bb, 2d58a196be180013df61a9aafb1a80920737d4f2, fce38999adaaadf5f1b5676e4ef0f73ac7bb9808, ecbc29c98b2f86b0629c8d02403de128b1f0cf85.
+- Phần việc và file/commit/PR: Cải thiện system_prompt.md, sửa tools trong tool.yaml, chạy và phân tích eval v0, v4, v5, cập nhật version_log.csv. Commit: 0d9e569, 2d58a19, fce3899, ecbc29c.
 - Quyết định, khó khăn và cách xử lý: Xem log, phân tích các test case lỗi, xác định loại lỗi, kiểm tra tool được gọi và system prompt, chuẩn đoán nguyên nhân; Nới lỏng system prompt khỏi bị quá cứng nhắc/hardcode, thêm mô tả chi tiết cho tool; Không phải chuẩn đoán nào cũng chính xác, giải pháp sau làm hỏng giải pháp trước, sau mỗi giải pháp phải chạy lại 1 lần tất cả test case; Thử lại nhiều lần.
 - Điều đã học: Trace log, chuẩn đoán nguyên nhân gây lỗi nếu agent sử dụng tool sai cách (sai tool, sai tham số,...), quyết định khi nào sửa tool/system_prompt, phối hợp làm việc nhóm.
 - AI/công cụ đã dùng và cách kiểm tra: Anti-gravity, Git/GitHub, OpenRouter. Trích xuất test_case failed của run, học cách nhận biết trường hợp nào sửa tool/system_prompt, học cách viết description chặt chẽ cho tool, viết log từ json vào csv.
 - Thời điểm đã tự nộp URL repo chung trên VLearn:
+
+### Đinh Đức Long - 2A202602633
+
+- Phần việc và file/commit/PR: Cải thiện system_prompt.md và tools.yaml. Chạy và phân tích eval_adversarial. Phân tích và cập nhật các case H12, M05, M09 (nhóm lỗi bỏ qua/sai thứ tự confirmation boundary trước write-action) trong eval_base. Cập nhật thêm 10 case mới vào data/eval_group.json. Commit: 910360a, d44e9f8.
+- Quyết định, khó khăn và cách xử lý: Phát hiện agent tin nhầm nội dung do user tự chèn thành xác nhận thật, dẫn tới bỏ qua confirmation ở nhiều case adversarial. Khó khăn là viết rule đủ tổng quát để chặn nhiều biến thể injection. Xử lý sửa system_prompt.md để chỉ tin tool_result thật từ hệ thống và từ chối ngay khi có dữ liệu nhạy cảm
+- Điều đã học: Cách thiết kế prompt injection, forged state, role spoofing, stale confirmation để kiểm tra ranh giới an toàn của agent, hiểu rằng một agent có thể vượt qua base suite nhưng vẫn có lỗ hổng nghiêm trọng ở adversarial suite nếu rule an toàn không được viết ở mức tổng quát, cách viết eval case có expect rõ ràng và bám sát failure_type thực tế.
+- AI/công cụ đã dùng và cách kiểm tra: Sử dụng Antigravity, Git/GitHub và OpenRouter. Kiểm tra qua run JSON, metric, hash artifact và git diff.     
+- Thời điểm đã tự nộp URL repo chung trên VLearn: 
