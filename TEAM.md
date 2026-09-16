@@ -53,3 +53,10 @@ Sao chép mục này cho từng thành viên.
 - Điều đã học: Cách thiết kế prompt injection, forged state, role spoofing, stale confirmation để kiểm tra ranh giới an toàn của agent, hiểu rằng một agent có thể vượt qua base suite nhưng vẫn có lỗ hổng nghiêm trọng ở adversarial suite nếu rule an toàn không được viết ở mức tổng quát, cách viết eval case có expect rõ ràng và bám sát failure_type thực tế.
 - AI/công cụ đã dùng và cách kiểm tra: Sử dụng Antigravity, Git/GitHub và OpenRouter. Kiểm tra qua run JSON, metric, hash artifact và git diff.     
 - Thời điểm đã tự nộp URL repo chung trên VLearn: 
+
+### Hà Anh Tuấn - 2A202602376
+- Phần việc và file/commit/PR: Xây dựng giao diện web bằng Streamlit cho IT Helpdesk Agent trong `starter_v0/app.py`; bổ sung dependency Streamlit trong `starter_v0/requirements.txt`; tích hợp luồng chat với provider, hiển thị tool-calling traces và lưu transcript hội thoại tại `starter_v0/transcripts/`. Commit: `0ff29dc`, `a660cca`.
+- Quyết định, khó khăn và cách xử lý: Dùng `st.session_state` để giữ lịch sử hội thoại giữa các lần Streamlit rerun, giúp trải nghiệm chat liền mạch. Chuẩn hóa phần phản hồi từ agent bằng cách tách trường `reply` trong JSON trước khi hiển thị, đồng thời đặt tool traces trong expander để giao diện gọn nhưng vẫn có bằng chứng kiểm tra.
+- Điều đã học: Cách kết nối giao diện Streamlit với vòng lặp model/tool calling, quản lý trạng thái của ứng dụng web tương tác và lưu transcript để tái kiểm tra một phiên chạy thực tế.
+- AI/công cụ đã dùng và cách kiểm tra: Sử dụng Streamlit, Python, Git/GitHub và Gemini provider. Kiểm tra bằng cách chạy giao diện, gửi hội thoại thử nghiệm, xác nhận phản hồi được hiển thị đúng, tool events xuất hiện trong trace và transcript được tạo trong thư mục `transcripts/`.
+- Thời điểm đã tự nộp URL repo chung trên VLearn:
