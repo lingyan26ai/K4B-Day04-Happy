@@ -44,7 +44,7 @@ Sao chép mục này cho từng thành viên.
 - Quyết định, khó khăn và cách xử lý: Xem log, phân tích các test case lỗi, xác định loại lỗi, kiểm tra tool được gọi và system prompt, chuẩn đoán nguyên nhân; Nới lỏng system prompt khỏi bị quá cứng nhắc/hardcode, thêm mô tả chi tiết cho tool; Không phải chuẩn đoán nào cũng chính xác, giải pháp sau làm hỏng giải pháp trước, sau mỗi giải pháp phải chạy lại 1 lần tất cả test case; Thử lại nhiều lần.
 - Điều đã học: Trace log, chuẩn đoán nguyên nhân gây lỗi nếu agent sử dụng tool sai cách (sai tool, sai tham số,...), quyết định khi nào sửa tool/system_prompt, phối hợp làm việc nhóm.
 - AI/công cụ đã dùng và cách kiểm tra: Anti-gravity, Git/GitHub, OpenRouter. Trích xuất test_case failed của run, học cách nhận biết trường hợp nào sửa tool/system_prompt, học cách viết description chặt chẽ cho tool, viết log từ json vào csv.
-- Thời điểm đã tự nộp URL repo chung trên VLearn:
+- Thời điểm đã tự nộp URL repo chung trên VLearn: 10:27:36 16/9/2026
 
 ### Đinh Đức Long - 2A202602633
 
